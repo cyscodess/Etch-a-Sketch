@@ -7,6 +7,12 @@
     <title>Etch-a-Sketch</title>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="container">
@@ -14,10 +20,19 @@
             <h1>Etch-a-Sketch</h1>
         </head>
         <main>
-            <!-- show ink selected -->
-            <!-- buttons needed: input to adjust grid size, color picker, reset -->
-            <div class="grid-board">
+            <div class="grid-board" id="grid-board">
 
+            </div>
+            <div class="menu">
+                <div class="selections">
+                    <span>Current Color: </span>
+                    <span>Grid Size: </span>
+                </div>
+                <div class="buttons">
+                    <button>Color Picker</button>
+                    <button>Adjust Grid Size</button>
+                    <button>Reset</button>
+                </div>
             </div>
         </main>
     </div>

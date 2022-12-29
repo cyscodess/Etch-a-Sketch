@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    background-color: #EF3054;
+    border-radius: 20px;
+    width: 700px;
+    height: 700px;
+    margin: auto;
+    padding: 1em;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;    
+}
+
+.container::before {
+    content: "";
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 2rem;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.container::after {
+    content: "";
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 2rem;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+}
+
+.grid-board {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* TYPOGRAPHY */
+h1 {
+    font-weight: 700;
+    color: #FFFD82;
+}
+
+/* BUTTONS */
+
+button { 
+    text-decoration: none;
+    border-style: none;
+    background-color: #fff;
+    color: #2D3047;
+    font-weight: 700;
+    padding: 0.4em 0.8em;
+}
