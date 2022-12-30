@@ -74,12 +74,27 @@ body {
     margin: 0 auto 1rem auto;
 }
 
+.customize-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    display: block;
+}
+
 /* TYPOGRAPHY */
 h1 {
     font-size: 2.5rem;
     margin-top: 0.85rem;
     font-weight: 700;
     color: #FFFD82;
+}
+
+span {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
 /* BUTTONS */
@@ -91,4 +106,18 @@ button {
     color: #2D3047;
     font-weight: 700;
     padding: 0.4em 0.8em;
+}
+
+button,
+input {
+    border-radius: 5px;
+}
+
+input[type=color] {
+    background-color: #fff;
+    border: none;
+}
+
+.customize-buttons {
+    margin-bottom: 0.8rem;
 }

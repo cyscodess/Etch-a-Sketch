@@ -25,14 +25,22 @@
 
             </div>
             <div class="menu">
-                <div class="selections">
-                    <span>Current Color: </span>
-                    <span>Grid Size: </span>
-                </div>
                 <div class="buttons">
-                    <button>Color Picker</button>
-                    <button>Adjust Grid Size</button>
-                    <button>Reset</button>
+                    <div class="customize-buttons">
+                        <div class="pen">
+                            <span class="button-label">Pen</span>
+                            <input type="color" id="pen-color-picker">
+                        </div>
+                        <div class="grid-bg">
+                            <span class="button-label">Background</span>
+                            <input type="color" id="background-color-picker">
+                        </div>
+                        <div class="grid-size">
+                            <span class="button-label">Grid Size</span>
+                            <input type="range" placeholder="Adjust grid size">
+                        </div>
+                    </div>
+                    <button id="clear-btn">Clear</button>
                 </div>
             </div>
         </main>
