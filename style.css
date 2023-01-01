@@ -69,9 +69,11 @@ body {
     border: 2px solid #2D3047;
     height: 460px;
     width: 460px;
-    display: grid;
     background-color: #fff;
     margin: 0 auto 1rem auto;
+    display: grid;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
 .customize-buttons {
@@ -108,7 +110,7 @@ button {
     padding: 0.4em 0.8em;
 }
 
-button,
+button, 
 input {
     border-radius: 5px;
 }
