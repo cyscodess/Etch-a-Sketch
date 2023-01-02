@@ -80,6 +80,7 @@ p {
     display: grid;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    overflow: hidden;
 }
 
 .customize-buttons {
@@ -129,4 +130,13 @@ input[type=color] {
 
 .customize-buttons {
     margin-bottom: 0.8rem;
+}
+
+.clear-btn:hover {
+    cursor: pointer;
+    background-color: #FFFD82;
+}
+
+.clear-btn:active {
+    background-color: #f3f163;
 }

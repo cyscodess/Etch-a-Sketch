@@ -1,7 +1,12 @@
 // Create 16x16 grid as default on page load
 const gridBoard = document.getElementById("grid-board")
-
+const bgDefault = "#FFFFFF"
+const penDefault = "#000000"
 let paintToggle = false
+
+document.getElementById("background-color-picker").value = bgDefault
+
+document.getElementById("pen-color-picker").value = penDefault
 
 function drawBoard(size) {
     gridBoard.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -15,14 +20,6 @@ function drawBoard(size) {
 }
 
 window.onload = drawBoard(16)
-
-// Set default color of background
-
-document.getElementById("background-color-picker").value = "#ffffff"
-
-// Set default color of ink
-
-document.getElementById("pen-color-picker").value = "#000000"
 
 // Change color of div on mouse click/hold
 
@@ -53,3 +50,12 @@ function rightClick(e) {
 }
 
 // Add button to select custom color
+
+
+// Add Reset
+
+document.getElementById("clear-btn").addEventListener("click", resetBoard)
+
+function resetBoard() {
+    document.querySelectorAll(".cell").forEach(cell => cell.style.backgroundColor = bgDefault)
+}
