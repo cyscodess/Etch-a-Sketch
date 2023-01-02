@@ -28,25 +28,21 @@
             <div class="menu">
                 <div class="buttons">
                     <div class="customize-buttons">
-                        <div class="pen">
-                            <span class="button-label">Pen</span>
-                            <input type="color" id="pen-color-picker">
-                        </div>
-                        <div class="grid-bg">
-                            <span class="button-label">Background</span>
-                            <input type="color" id="background-color-picker">
-                        </div>
+                        <span class="pen">Pen</span>
+                        <input type="color" id="pen-color-picker" class="input-pen">
+                        <span class="button-label" class="bg-color">Background</span>
+                        <input type="color" id="background-color-picker" class="input-bg-color">
                         <div class="grid-size">
-                            <span class="button-label">Grid Size</span>
-                            <input type="range" placeholder="Adjust grid size">
+                            <span class="grid-size-header">Grid Size: </span>
+                            <input type="range" placeholder="Adjust grid size" value="16" min="16" max="100" id="grid-size" class="input-range" onchange="displaySize(this.value)">
+                            <span id="display-size" class="grid-size-value"></span>
                         </div>
                     </div>
-                    <button id="clear-btn" class="clear-btn">Reset</button>
                 </div>
             </div>
         </main>
+        <button id="clear-btn" class="clear-btn">Reset</button>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

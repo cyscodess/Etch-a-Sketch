@@ -34,7 +34,7 @@ body {
     margin: auto;
     padding: 1em;
     position: absolute;
-    top:0;
+    top: -10%;
     bottom: 0;
     left: 0;
     right: 0;    
@@ -76,23 +76,74 @@ p {
     height: 460px;
     width: 460px;
     background-color: #fff;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1.5rem auto;
     display: grid;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     overflow: hidden;
 }
 
-.customize-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-label {
+.grid-size-header {
     margin-top: 0;
     display: block;
 }
+
+.customize-buttons {
+    margin: 0 auto;
+    width: 70%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "pen bg-color grid-size"
+        "input-pen input-bg-color grid-size"
+        ". . ."; 
+    justify-items: center; 
+}
+
+.pen {
+    grid-area: pen;
+}
+
+.input-pen { 
+    grid-area: input-pen; 
+}
+
+.bg-color { 
+    grid-area: bg-color; 
+}
+
+.input-bg-color { 
+    grid-area: input-bg-color; 
+}
+
+.grid-size {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "grid-size-header grid-size-header grid-size-header"
+        "input-range input-range input-range"
+        "grid-size-value grid-size-value grid-size-value"; 
+    grid-area: grid-size; 
+    justify-items: center; 
+    align-items: center; 
+}
+
+.grid-size-header { 
+    grid-area: grid-size-header; 
+}
+
+.input-range { 
+    grid-area: input-range; 
+}
+
+.grid-size-value { 
+    grid-area: grid-size-value; 
+}
+
 
 /* TYPOGRAPHY */
 h1 {
@@ -107,9 +158,14 @@ span {
     margin-bottom: 0.5rem;
 }
 
+#display-size {
+    display: block;
+}
+
 /* BUTTONS */
 
 button { 
+    font-size: 1.5rem;
     text-decoration: none;
     border-style: none;
     background-color: #fff;

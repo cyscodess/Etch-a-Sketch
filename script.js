@@ -7,18 +7,20 @@ let bgPicker = document.getElementById("background-color-picker")
 let selectedColor = colorPicker.value
 let selectedBg = bgPicker.value
 let paintToggle = false
+let gridSize = document.getElementById("grid-size")
 
-window.onload = drawBoard(16)
+window.onload = drawBoard(gridSize.value)
 
-document.getElementById("background-color-picker").value = bgDefault
-
-document.getElementById("pen-color-picker").value = penDefault
+displaySize(gridSize.value)
 
 document.getElementById("clear-btn").addEventListener("click", resetBoard)
 
+bgPicker.value = bgDefault
+colorPicker.value = penDefault
+
 gridBoard.addEventListener("mouseover", paint)
 
-gridBoard.addEventListener("contextmenu", rightClick)
+document.addEventListener("contextmenu", rightClick)
 
 colorPicker.addEventListener("input", function() {
     selectedColor = this.value
@@ -29,9 +31,19 @@ bgPicker.addEventListener("input", function() {
     document.querySelectorAll(".cell").forEach(cell => cell.style.backgroundColor = selectedBg)
 })
 
+gridSize.addEventListener("input", function() {
+    let size = this.value
+    drawBoard(size)
+    resetBoard()
+})
+
+function displaySize(value) {
+    document.getElementById("display-size").innerText = value
+}
+
 function drawBoard(size) {
     gridBoard.style.gridTemplateColumns = `repeat(${size}, 1fr)`
-    gridBoard.style.gridAutoRows = `repeat(${size}, 1fr)`
+    gridBoard.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
     for (let i = 0; i < size ** 2; i++) {
         let cell = document.createElement("div")
@@ -64,6 +76,7 @@ function rightClick(e) {
 
 function resetBoard() {
     document.querySelectorAll(".cell").forEach(cell => cell.style.backgroundColor = bgDefault)
+    drawBoard(gridSize)
     document.getElementById("pen-color-picker").value = penDefault
     document.getElementById("background-color-picker").value = bgDefault
 }
