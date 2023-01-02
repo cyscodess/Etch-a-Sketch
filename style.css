@@ -190,9 +190,18 @@ input[type=color] {
 
 .clear-btn:hover {
     cursor: pointer;
-    background-color: #FFFD82;
+    color: #fff;
+    background-color: #EF3054;
 }
 
 .clear-btn:active {
-    background-color: #f3f163;
+    color: #fff;
+    background-color: #cf2b49;
+}
+
+.input-range {
+    -webkit-appearance: none;
+    background: #fff;
+    outline: none;
+    border-radius: 50px;
 }
