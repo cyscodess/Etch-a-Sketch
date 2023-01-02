@@ -2,11 +2,25 @@
 const gridBoard = document.getElementById("grid-board")
 const bgDefault = "#FFFFFF"
 const penDefault = "#000000"
+let colorPicker = document.getElementById("pen-color-picker")
+let selectedColor = colorPicker.value
 let paintToggle = false
+
+colorPicker.addEventListener("input", function() {
+    selectedColor = this.value
+})
+
+window.onload = drawBoard(16)
 
 document.getElementById("background-color-picker").value = bgDefault
 
 document.getElementById("pen-color-picker").value = penDefault
+
+document.getElementById("clear-btn").addEventListener("click", resetBoard)
+
+gridBoard.addEventListener("mouseover", paint)
+
+gridBoard.addEventListener("contextmenu", rightClick)
 
 function drawBoard(size) {
     gridBoard.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -19,22 +33,14 @@ function drawBoard(size) {
     }
 }
 
-window.onload = drawBoard(16)
-
-// Change color of div on mouse click/hold
-
-gridBoard.addEventListener("mouseover", paint)
-
 function paint(e) {
     const target = e.target
     if (!paintToggle) {
         if (target.classList.contains("cell")) {
-            e.target.style.backgroundColor = "#000000"
+            e.target.style.backgroundColor = selectedColor
         }
     }
 }
-
-gridBoard.addEventListener("contextmenu", rightClick)
 
 function rightClick(e) {
     e.preventDefault()
@@ -49,13 +55,7 @@ function rightClick(e) {
     
 }
 
-// Add button to select custom color
-
-
-// Add Reset
-
-document.getElementById("clear-btn").addEventListener("click", resetBoard)
-
 function resetBoard() {
     document.querySelectorAll(".cell").forEach(cell => cell.style.backgroundColor = bgDefault)
+    document.getElementById("pen-color-picker").value = penDefault
 }
