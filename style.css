@@ -2,6 +2,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -64,6 +66,10 @@ body {
     right: 0; 
 }
 
+p {
+    margin-bottom: 0.85rem;
+}
+
 .grid-board {
     border-radius: 10px;
     border: 2px solid #2D3047;
@@ -82,7 +88,8 @@ body {
     justify-content: center;
 }
 
-span {
+.button-label {
+    margin-top: 0;
     display: block;
 }
 
