@@ -3,12 +3,10 @@ const gridBoard = document.getElementById("grid-board")
 const bgDefault = "#FFFFFF"
 const penDefault = "#000000"
 let colorPicker = document.getElementById("pen-color-picker")
+let bgPicker = document.getElementById("background-color-picker")
 let selectedColor = colorPicker.value
+let selectedBg = bgPicker.value
 let paintToggle = false
-
-colorPicker.addEventListener("input", function() {
-    selectedColor = this.value
-})
 
 window.onload = drawBoard(16)
 
@@ -21,6 +19,15 @@ document.getElementById("clear-btn").addEventListener("click", resetBoard)
 gridBoard.addEventListener("mouseover", paint)
 
 gridBoard.addEventListener("contextmenu", rightClick)
+
+colorPicker.addEventListener("input", function() {
+    selectedColor = this.value
+})
+
+bgPicker.addEventListener("input", function() {
+    selectedBg = this.value
+    document.querySelectorAll(".cell").forEach(cell => cell.style.backgroundColor = selectedBg)
+})
 
 function drawBoard(size) {
     gridBoard.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -58,4 +65,5 @@ function rightClick(e) {
 function resetBoard() {
     document.querySelectorAll(".cell").forEach(cell => cell.style.backgroundColor = bgDefault)
     document.getElementById("pen-color-picker").value = penDefault
+    document.getElementById("background-color-picker").value = bgDefault
 }
