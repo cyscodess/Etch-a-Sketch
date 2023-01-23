@@ -9,12 +9,9 @@
 body {
     font-family: 'Raleway', sans-serif;
     color: #fff;
-}
-
-.background {
+    background-color:#ff99d1;
     width: 100vw;
     height: 100vh;
-    background-color:#ff99d1;
     background-image:
     radial-gradient(at 85% 67%, hsla(359,90%,65%,1) 0px, transparent 50%),
     radial-gradient(at 86% 93%, hsla(168,74%,79%,1) 0px, transparent 50%),
@@ -68,6 +65,15 @@ body {
 
 p {
     margin-bottom: 0.85rem;
+}
+
+footer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
 }
 
 .grid-board {
